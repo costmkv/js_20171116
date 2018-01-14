@@ -3,20 +3,25 @@
     
     const Block = window.Block;
 
-    class Button extends Block {
+    class ChatMessage extends Block {
 
         constructor(node, options = {}) {
             super(node, options);
         }
 
         render() {
+            if (this.options.type === 'me') {                
+            } else {
+            }         
+            
             this.node.innerHTML = `
-                <button class="button">
+                <div class="chat-message">
                     ${this.options.text}
-                </button>
-            `;
+                </div>
+            `
         }
+
     }
 
-    window.Button = Button;
+    window.ChatMessage = ChatMessage;
 })();
